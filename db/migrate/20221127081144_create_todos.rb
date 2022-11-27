@@ -1,10 +1,8 @@
-class CreateTodos < ActiveRecord::Migration[5.1]
-  def change
-    create_table :todos do |t|
-      t.string :name
-      t.boolean :is_completed
+def change
+  create_table :todos do |t|
+    t.string :name, null: false
+    t.boolean :is_completed, default: false, null: false
 
-      t.timestamps
-    end
+    t.timestamps
   end
 end
